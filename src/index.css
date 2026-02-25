@@ -1,52 +1,56 @@
- @import "tailwindcss";
+@import "tailwindcss";
 
- @theme {
-   --color-primary: #7c3aed;
-   --color-primary-light: #a78bfa;
+@theme {
+  --color-primary: #7c3aed;
+  --color-primary-light: #a78bfa;
+  --dark-mode: selector(.dark);
 
-   --animate-blob: blob 8s infinite;
+  --animate-blob: blob 8s infinite;
 
-   @keyframes blob {
-     0% {
-       transform: translate(0px, 0px) scale(1);
-     }
+  @keyframes blob {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
 
-     33% {
-       transform: translate(30px, -20px) scale(1.05);
-     }
+    33% {
+      transform: translate(30px, -20px) scale(1.05);
+    }
 
-     66% {
-       transform: translate(-20px, 20px) scale(0.95);
-     }
+    66% {
+      transform: translate(-20px, 20px) scale(0.95);
+    }
 
-     100% {
-       transform: translate(0px, 0px) scale(1);
-     }
-   }
- }
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
+}
 
- /* custom styles */
- :root {
-   --accent: #7c3aed;
- }
+/* custom styles */
+:root {
+  --accent: #7c3aed;
+}
 
- html {
-   scroll-behavior: smooth;
- }
+html {
+  scroll-behavior: smooth;
+}
 
- body {
-   -webkit-font-smoothing: antialiased;
-   -moz-osx-font-smoothing: grayscale;
- }
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
- .container {
-   max-width: 1100px;
-   margin-left: auto;
-   margin-right: auto;
-   padding-left: 1rem;
-   padding-right: 1rem;
- }
+.container {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 /* Global Transition for Theme Switching */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   transition: background-color 0.5s ease, border-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
 }
