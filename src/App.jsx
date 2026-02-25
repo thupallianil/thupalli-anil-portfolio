@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Home from "./pages/Home";
-import Navbar from "./components/common/Navbar";
-import Footer from "./components/common/Footer";
-import CursorFollower from "./components/ui/CursorFollower";
+import Navbar from "./components/Common/Navbar";
+import Footer from "./components/Common/Footer";
+import CursorFollower from "./components/UI/CursorFollower";
 function App() {
   // theme (persisted)
   const [theme, setTheme] = useState(() => {
