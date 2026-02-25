@@ -11,7 +11,7 @@ function SkillCard({ skill, index = 0 }) {
   const skillLevels = {
     React: 90,
     "Node.js": 85,
-    "Next.js": 88,
+    Django: 90,
     "Tailwind CSS": 92,
     DSA: 90,
     Python: 85,
@@ -118,7 +118,7 @@ export default function SkillsGrid() {
   const skillCategories = {
     all: skills,
     frontend: skills.filter((s) =>
-      ["React", "Next.js", "Tailwind CSS", "HTML", "CSS", "JavaScript", "TypeScript"].includes(s.name)
+      ["React", "Django", "Tailwind CSS", "HTML", "CSS", "JavaScript", "TypeScript"].includes(s.name)
     ),
     backend: skills.filter((s) =>
       ["Node.js", "Django", "SQL", "APIs", "REST APIs", "MySQL"].includes(s.name)

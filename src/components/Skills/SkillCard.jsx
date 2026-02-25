@@ -1,10 +1,10 @@
- import React, { useState } from 'react';
+import React, { useState } from 'react';
 
 // Skills data with correct public folder paths
 const skills = [
   { name: "React", icon: "/icons/react.png" },
   { name: "Node.js", icon: "/icons/node.png" },
-  { name: "Next.js", icon: "/icons/nextjs.jpeg" },
+  { name: "Django", icon: "/icons/django.png" },
   { name: "Tailwind CSS", icon: "/icons/tailwind.jpeg" },
   { name: "Python", icon: "/icons/python.png" },
   { name: "MongoDB", icon: "/icons/mongodb.png" },
@@ -32,7 +32,7 @@ function SkillCard({ skill, index = 0 }) {
   const skillLevels = {
     "React": 90,
     "Node.js": 85,
-    "Next.js": 88,
+    "Django": 90,
     "Tailwind CSS": 92,
     "Python": 80,
     "MongoDB": 85,
@@ -71,12 +71,12 @@ function SkillCard({ skill, index = 0 }) {
         border: "border-green-200 dark:border-green-800",
         shadow: "shadow-green-500/25"
       },
-      "Next.js": {
-        gradient: "from-gray-700 to-gray-900",
-        bg: "bg-gray-50 dark:bg-gray-900/20",
-        text: "text-gray-600 dark:text-gray-300",
-        border: "border-gray-200 dark:border-gray-800",
-        shadow: "shadow-gray-500/25"
+      "Django": {
+        gradient: "from-green-600 to-green-900",
+        bg: "bg-green-50 dark:bg-green-900/20",
+        text: "text-green-700 dark:text-green-300",
+        border: "border-green-200 dark:border-green-800",
+        shadow: "shadow-green-500/25"
       },
       "Tailwind CSS": {
         gradient: "from-teal-400 to-blue-400",
@@ -199,7 +199,7 @@ function SkillCard({ skill, index = 0 }) {
         shadow: "shadow-orange-500/25"
       },
     };
-    
+
     return classMap[skillName] || {
       gradient: "from-purple-400 to-pink-400",
       bg: "bg-purple-50 dark:bg-purple-900/20",
@@ -224,9 +224,8 @@ function SkillCard({ skill, index = 0 }) {
 
   return (
     <div
-      className={`group relative transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 ${
-        isHovered ? 'z-10' : ''
-      }`}
+      className={`group relative transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 ${isHovered ? 'z-10' : ''
+        }`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={{
@@ -235,31 +234,27 @@ function SkillCard({ skill, index = 0 }) {
     >
       {/* Enhanced glow effect */}
       <div
-        className={`absolute -inset-1 rounded-2xl bg-gradient-to-r ${skillClasses.gradient} transition-all duration-300 ${
-          isHovered ? 'opacity-60 blur-lg scale-105' : 'opacity-0 blur-sm scale-95'
-        }`}
+        className={`absolute -inset-1 rounded-2xl bg-gradient-to-r ${skillClasses.gradient} transition-all duration-300 ${isHovered ? 'opacity-60 blur-lg scale-105' : 'opacity-0 blur-sm scale-95'
+          }`}
       />
 
       {/* Secondary glow */}
       <div
-        className={`absolute -inset-0.5 rounded-2xl bg-gradient-to-r ${skillClasses.gradient} transition-all duration-200 ${
-          isHovered ? 'opacity-40 blur-sm' : 'opacity-0'
-        }`}
+        className={`absolute -inset-0.5 rounded-2xl bg-gradient-to-r ${skillClasses.gradient} transition-all duration-200 ${isHovered ? 'opacity-40 blur-sm' : 'opacity-0'
+          }`}
       />
 
       {/* Main card */}
-      <div 
-        className={`relative bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm p-6 rounded-2xl border ${skillClasses.border} overflow-hidden transition-all duration-300 ${
-          isHovered 
-            ? `shadow-2xl ${skillClasses.shadow}` 
+      <div
+        className={`relative bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm p-6 rounded-2xl border ${skillClasses.border} overflow-hidden transition-all duration-300 ${isHovered
+            ? `shadow-2xl ${skillClasses.shadow}`
             : 'shadow-lg hover:shadow-xl'
-        }`}
+          }`}
       >
         {/* Animated background pattern */}
-        <div 
-          className={`absolute inset-0 opacity-5 transition-all duration-600 ${
-            isHovered ? 'opacity-10' : ''
-          }`}
+        <div
+          className={`absolute inset-0 opacity-5 transition-all duration-600 ${isHovered ? 'opacity-10' : ''
+            }`}
           style={{
             backgroundImage: `radial-gradient(circle at 20px 20px, currentColor 1px, transparent 1px)`,
             backgroundSize: '20px 20px',
@@ -271,33 +266,29 @@ function SkillCard({ skill, index = 0 }) {
         <div className="relative z-10">
           {/* Header with icon and name */}
           <div className="flex items-center gap-4 mb-4">
-            <div 
-              className={`relative transition-all duration-300 ${
-                isHovered ? 'scale-105 rotate-3' : ''
-              }`}
+            <div
+              className={`relative transition-all duration-300 ${isHovered ? 'scale-105 rotate-3' : ''
+                }`}
             >
               {/* Icon container with enhanced gradient border */}
               <div
-                className={`w-16 h-16 rounded-xl bg-gradient-to-br ${skillClasses.gradient} p-0.5 shadow-lg transition-all duration-300 ${
-                  isHovered ? 'shadow-2xl scale-105' : ''
-                }`}
+                className={`w-16 h-16 rounded-xl bg-gradient-to-br ${skillClasses.gradient} p-0.5 shadow-lg transition-all duration-300 ${isHovered ? 'shadow-2xl scale-105' : ''
+                  }`}
               >
                 <div className="w-full h-full bg-white dark:bg-gray-800 rounded-xl flex items-center justify-center">
                   {!imageError && skill.icon ? (
-                    <img 
-                      src={skill.icon} 
+                    <img
+                      src={skill.icon}
                       alt={`${skill.name} logo`}
-                      className={`w-9 h-9 object-contain transition-all duration-200 ${
-                        isHovered ? 'scale-110' : ''
-                      }`}
+                      className={`w-9 h-9 object-contain transition-all duration-200 ${isHovered ? 'scale-110' : ''
+                        }`}
                       onError={() => setImageError(true)}
                       loading="lazy"
                     />
                   ) : (
-                    <div 
-                      className={`w-9 h-9 rounded-lg bg-gradient-to-br ${skillClasses.gradient} flex items-center justify-center text-white font-bold text-sm transition-all duration-200 ${
-                        isHovered ? 'scale-110' : ''
-                      }`}
+                    <div
+                      className={`w-9 h-9 rounded-lg bg-gradient-to-br ${skillClasses.gradient} flex items-center justify-center text-white font-bold text-sm transition-all duration-200 ${isHovered ? 'scale-110' : ''
+                        }`}
                     >
                       {skill.name.charAt(0)}
                     </div>
@@ -316,36 +307,34 @@ function SkillCard({ skill, index = 0 }) {
             </div>
 
             <div className="flex-1">
-              <h3 
-                className={`font-bold text-lg ${skillClasses.text} transition-all duration-300 ${
-                  isHovered ? 'scale-105 translate-x-1' : ''
-                }`}
+              <h3
+                className={`font-bold text-lg ${skillClasses.text} transition-all duration-300 ${isHovered ? 'scale-105 translate-x-1' : ''
+                  }`}
               >
                 {skill.name}
               </h3>
-              
+
               {/* Enhanced skill level indicator */}
               <div className="flex items-center gap-2 mt-2">
                 <div className="flex-1 h-3 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden shadow-inner">
                   <div
                     className={`h-full bg-gradient-to-r ${skillClasses.gradient} rounded-full relative overflow-hidden transition-all duration-1000 ease-out`}
-                    style={{ 
+                    style={{
                       width: `${proficiency}%`,
                       animationDelay: `${0.3 + (index * 0.15)}s`,
                     }}
                   >
                     {/* Animated shine effect */}
                     <div
-                      className={`absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent transition-all duration-1000 ${
-                        isHovered ? 'translate-x-full' : '-translate-x-full'
-                      }`}
+                      className={`absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent transition-all duration-1000 ${isHovered ? 'translate-x-full' : '-translate-x-full'
+                        }`}
                       style={{
                         animationDelay: `${1 + (index * 0.15)}s`,
                       }}
                     />
                   </div>
                 </div>
-                <span 
+                <span
                   className={`text-sm font-bold ${skillClasses.text} tabular-nums transition-all duration-300`}
                   style={{
                     animationDelay: `${1.2 + (index * 0.1)}s`,
@@ -358,34 +347,31 @@ function SkillCard({ skill, index = 0 }) {
           </div>
 
           {/* Enhanced experience level badge and stars */}
-          <div 
+          <div
             className="flex items-center justify-between transition-all duration-300"
             style={{
               animationDelay: `${0.6 + (index * 0.08)}s`,
             }}
           >
-            <div 
-              className={`px-4 py-2 rounded-full text-xs font-bold bg-gradient-to-r ${skillClasses.gradient} text-white shadow-lg transition-all duration-200 ${
-                isHovered ? 'scale-110 -translate-y-1 shadow-2xl' : ''
-              }`}
+            <div
+              className={`px-4 py-2 rounded-full text-xs font-bold bg-gradient-to-r ${skillClasses.gradient} text-white shadow-lg transition-all duration-200 ${isHovered ? 'scale-110 -translate-y-1 shadow-2xl' : ''
+                }`}
             >
               {getExperienceLevel(proficiency)}
             </div>
-            
+
             {/* Enhanced interactive stars */}
             <div className="flex gap-1">
               {[1, 2, 3, 4, 5].map((star) => (
                 <div
                   key={star}
-                  className={`text-lg cursor-pointer transition-all duration-200 ${
-                    star <= getStarRating(proficiency) 
-                      ? "text-yellow-400 hover:scale-125" 
+                  className={`text-lg cursor-pointer transition-all duration-200 ${star <= getStarRating(proficiency)
+                      ? "text-yellow-400 hover:scale-125"
                       : "text-gray-300 dark:text-gray-600 hover:scale-110"
-                  } ${
-                    isHovered && star <= getStarRating(proficiency) 
-                      ? 'animate-pulse scale-110' 
+                    } ${isHovered && star <= getStarRating(proficiency)
+                      ? 'animate-pulse scale-110'
                       : ''
-                  }`}
+                    }`}
                   style={{
                     animationDelay: `${star * 0.1}s`,
                   }}
@@ -398,9 +384,8 @@ function SkillCard({ skill, index = 0 }) {
 
           {/* Enhanced hover overlay effect */}
           <div
-            className={`absolute inset-0 rounded-2xl ${skillClasses.bg} transition-all duration-300 ${
-              isHovered ? 'opacity-10 scale-105' : 'opacity-0 scale-100'
-            }`}
+            className={`absolute inset-0 rounded-2xl ${skillClasses.bg} transition-all duration-300 ${isHovered ? 'opacity-10 scale-105' : 'opacity-0 scale-100'
+              }`}
           />
         </div>
       </div>
@@ -421,7 +406,7 @@ export default function SkillsDemo() {
             Interactive skill cards with graphic design tools
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {skills.map((skill, index) => (
             <SkillCard key={skill.name} skill={skill} index={index} />

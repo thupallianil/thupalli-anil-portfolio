@@ -241,7 +241,7 @@ export default function Hero() {
                   </p>
 
                   <div className="flex justify-center gap-2">
-                    {["React", "Node.js", "Next.js"].map((skill, i) => (
+                    {["React", "Node.js", "Django"].map((skill, i) => (
                       <motion.span
                         key={skill}
                         className="px-3 py-1 text-xs bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/50 dark:to-purple-900/50 rounded-full font-medium"
