@@ -27,6 +27,9 @@ function App() {
 
 
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-900 transition-colors">
+      <div className="fixed bottom-4 left-4 z-[9999] bg-black/80 text-white px-3 py-1 rounded-full text-[10px] pointer-events-none">
+        DEBUG: {theme.toUpperCase()} MODE
+      </div>
       <Navbar theme={theme} setTheme={setTheme} />
       <main>
         <Home />
