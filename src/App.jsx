@@ -14,10 +14,13 @@ function App() {
 
   useEffect(() => {
     const root = window.document.documentElement;
+    console.log("Theme changing to:", theme);
     if (theme === "dark") {
       root.classList.add("dark");
+      console.log("Added 'dark' class to root");
     } else {
       root.classList.remove("dark");
+      console.log("Removed 'dark' class from root");
     }
     localStorage.setItem("theme", theme);
   }, [theme]);
